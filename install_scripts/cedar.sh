@@ -1,5 +1,5 @@
 ############
-# Hyku
+# Cedar
 ############
 
 echo "Installing Cedar"
