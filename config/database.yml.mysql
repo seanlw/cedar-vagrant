@@ -1,0 +1,18 @@
+# MySQL
+#   gem install mysql2
+#
+#   Ensure the MySQL gem is defined in your Gemfile
+#   gem 'mysql2'
+#
+default: &default
+  adapter: mysql2
+  encoding: utf8
+  reconnect: false
+  pool: 5
+
+production:
+  <<: *default
+  database: cedar
+  username: cedar
+  password: cedar
+  host: localhost

@@ -1,0 +1,17 @@
+#!/bin/sh
+#
+# Contain Environment variables for installs
+#
+
+HOME_DIR="/home/ubuntu"
+
+SHARED_DIR="/vagrant"
+
+DOWNLOAD_DIR="$SHARED_DIR/downloads"
+if [ ! -d $DOWNLOAD_DIR ]; then
+  mkdir $DOWNLOAD_DIR
+fi
+
+FUSEKI_VERSION=3.4.0
+FUSEKI_BASE=/etc/fuseki
+FUSEKI_DEPLOY=/var/lib/tomcat7/webapps

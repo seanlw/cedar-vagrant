@@ -1,0 +1,32 @@
+#!/bin/sh
+### BEGIN INIT INFO
+# Provides:          cedar
+# Required-Start:    $remote_fs
+# Required-Stop:     $remote_fs
+# Default-Start:     2 3 4 5
+# Default-Stop:      0 1 6
+# Short-Description: Start daemon at boot time
+# Description:       Cedar
+### END INIT INFO
+
+RAILS_ROOT="/var/www/cedar"
+ENV="production"
+
+case "$1" in
+  start)
+  echo -n "Starting Cedar job: "
+  su -s /bin/sh apache -c "cd $RAILS_ROOT && rake RAILS_ENV=$ENV jobs:work &" >> $RAILS_ROOT/log/jobs.log 2>&1
+  echo "done."
+  ;;
+  stop)
+  echo -n "Stopping Cedar job: "
+  su -s /bin/sh apache -c "cd $RAILS_ROOT && rake RAILS_ENV=$ENV jobs:stopwork" >> $RAILS_ROOT/log/jobs.log 2>&1
+  echo "done."
+  ;;
+  *)
+  echo "Usage: $N {start|stop}" >&2
+  exit 1
+  ;;
+esac
+
+exit 0
