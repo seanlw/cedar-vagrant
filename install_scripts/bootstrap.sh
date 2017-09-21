@@ -29,3 +29,6 @@ iptables-save > /etc/iptables/rules.v4
 
 # Create Cedar database
 mysql -uroot -proot -e "create database if not exists cedar character set utf8 collate utf8_general_ci;create user if not exists 'cedar'@'localhost' identified by 'cedar';grant all privileges on cedar.* to 'cedar'@'localhost';flush privileges;"
+
+# Create Greens database
+mysql -uroot -proot -e "create database if not exists greens character set utf8 collate utf8_general_ci;create user if not exists 'greens'@'localhost' identified by 'greens';grant all privileges on greens.* to 'greens'@'localhost';flush privileges;"

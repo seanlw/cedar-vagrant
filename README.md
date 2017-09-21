@@ -20,13 +20,6 @@ You can shell into the machine with `vagrant ssh` or `ssh -p 2222 vagrant@localh
 
 Shutdown Cedar with `vagrant halt`
 
-## Configuration
-
-You will need to configure Cedar before creating your first concept. Login as
-a administrator and go to [Configuration](http://localhost:8888/en/config.html) under the 'Administration' menu.
-
-**Required:** `Minter` section must be completed. DO NOT USE GREENS PRODUCTION SETTINGS.
-
 ## Environment
 
 * Ubuntu 16.04 64-bit machine with:
@@ -37,6 +30,7 @@ a administrator and go to [Configuration](http://localhost:8888/en/config.html) 
   * [Tomcat 7](http://tomcat.apache.org) at [http://localhost:8080/manager](http://localhost:8080/manager)
     * Manager username = "admin", password = "admin"
   * [Fuseki 3.4.0](https://jena.apache.org/documentation/fuseki2/index.html) at [http://localhost:8080/fuseki](http://localhost:8080/fuseki)
+  * [Greens](https://github.com/uhlibraries-digital/greens) at [http://id.localhost:8888](http://id.localhost:8888)
 
 ## Windows Troubleshooting
 

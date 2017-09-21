@@ -20,9 +20,11 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 	shared_dir = "/vagrant"
 
 	config.vm.provision "shell", path: "./install_scripts/bootstrap.sh", args: shared_dir
+	config.vm.provision "shell", path: "./install_scripts/dnsmasq.sh", args: shared_dir
 	config.vm.provision "shell", path: "./install_scripts/fuseki.sh", args: shared_dir
 	config.vm.provision "shell", path: "./install_scripts/ruby.sh", privileged: false, args: shared_dir
 	config.vm.provision "shell", path: "./install_scripts/passenger.sh", privileged: false, args: shared_dir
 	config.vm.provision "shell", path: "./install_scripts/cedar.sh", privileged: false, args: shared_dir
+	config.vm.provision "shell", path: "./install_scripts/greens.sh", privileged: false, args: shared_dir
 
 end

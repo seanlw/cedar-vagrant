@@ -21,7 +21,5 @@ sudo ln -s /etc/apache2/mods-available/passenger.conf /etc/apache2/mods-enabled/
 
 # Virtual Host config
 sudo rm /etc/apache2/sites-enabled/000-default.conf
-sudo cp -f $SHARED_DIR/config/cedar.conf /etc/apache2/sites-available/cedar.conf
-sudo a2ensite cedar
 
 echo "Done"

@@ -1,0 +1,8 @@
+##
+# Application configuration settings
+#
+production:
+  noid_template: ".reeddeeddk"
+  noid_state_file: /var/www/greens/tmp/noid_state
+  naan: "88888"
+  api-key: "1234"

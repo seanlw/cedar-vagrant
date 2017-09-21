@@ -20,6 +20,7 @@ rm -Rf $HOME_DIR/cedar
 
 cp -f $SHARED_DIR/config/database.yml.mysql /var/www/cedar/config/database.yml
 cp -f $SHARED_DIR/config/secrets.yml /var/www/cedar/config/secrets.yml
+cp -f $SHARED_DIR/config/cedar_seeds.rb /var/www/cedar/db/seeds.rb
 
 cd /var/www/cedar
 gem install bundler -q
@@ -29,6 +30,9 @@ bundle exec rake RAILS_ENV=production assets:precompile
 bundle exec rake RAILS_ENV=production db:create
 bundle exec rake RAILS_ENV=production db:migrate
 bundle exec rake RAILS_ENV=production db:seed
+
+sudo cp -f $SHARED_DIR/config/cedar.conf /etc/apache2/sites-available/cedar.conf
+sudo a2ensite cedar
 
 sudo service apache2 restart
 
