@@ -11,16 +11,17 @@
 
 RAILS_ROOT="/var/www/cedar"
 ENV="production"
+USER="ubuntu"
 
 case "$1" in
   start)
   echo -n "Starting Cedar job: "
-  su -s /bin/sh apache -c "cd $RAILS_ROOT && rake RAILS_ENV=$ENV jobs:work &" >> $RAILS_ROOT/log/jobs.log 2>&1
+  su - $USER -c "cd $RAILS_ROOT && RAILS_ENV=$ENV bundle exec rake jobs:work &" >> $RAILS_ROOT/log/jobs.log 2>&1
   echo "done."
   ;;
   stop)
   echo -n "Stopping Cedar job: "
-  su -s /bin/sh apache -c "cd $RAILS_ROOT && rake RAILS_ENV=$ENV jobs:stopwork" >> $RAILS_ROOT/log/jobs.log 2>&1
+  su - $USER -c "cd $RAILS_ROOT && RAILS_ENV=$ENV bundle exec rake jobs:stopwork" >> $RAILS_ROOT/log/jobs.log 2>&1
   echo "done."
   ;;
   *)
