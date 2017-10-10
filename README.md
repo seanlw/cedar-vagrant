@@ -16,7 +16,7 @@ Cedar vagrant box
 Click the "Login" button and login with `admin@iqvoc`, password: `admin`.
 This is the default user with administration privileges.
 
-You can shell into the machine with `vagrant ssh` or `ssh -p 2222 vagrant@localhost`
+You can shell into the machine with `vagrant ssh` or `ssh -p 2222 ubuntu@localhost`
 
 Shutdown Cedar with `vagrant halt`
 
